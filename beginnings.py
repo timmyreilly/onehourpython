@@ -11,3 +11,6 @@ for letter in sentence:
 
 print sentence_no_vowels
 
+r = requests.get('http://wikipedia.org')
+print r.status_code 
+print unicode(r.content) 
