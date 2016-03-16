@@ -1,57 +1,67 @@
-# One Hour Python Workshop
+# Windows Workshop
 
-Python is a great programming language for creators and engineers. 
-You don't have to have a degree in computer science to build amazing things. 
+Well you got just your new Windows PC. 
+Hopefully a crispy Surface Pro 4 (Starting at $899)
 
-This tutorial will get you up and running with Python in one hour so you can begin learning and creating. 
+And you want to learn how to program, and Python is the language you're going with. 
+Or you already know how to program and this is the first windows PC you've used in a while and like Python. 
+I don't know you…
 
-### Here's the list of everything we'll accomplish in the next hour: 
+Well that's fine too. 
 
-1. Install Python
-2. use the REPL
-3. Run our first program
-4. Install a package - (Flask/Beautiful Soup)
-5. Uninstall a package
-6. Install virtualenv
-7. Install virtualenvwrapper or virtualenvwrapper-win
-8. Create a virtual environment
-9. Install flask and run our first app
-10. What's next? 
+If at any point you get lost or confused, feel free to raise your hand/add a comment or PM me on twitter @timmyreilly http://twitter.com/timmyreilly 
 
-#Let's do this
+### In this course we'll cover: 
+1. Installing Python
+2. Using the REPL
+3. Running our first program
+4. Examining the Python Folders 
+5. Using Pip 
+6. Creating, installing to, and using virtualenv and virtualenvwrapper-win 
+7. Examining the Envs folders! 
+8. setprojectdir and Workflow
+- Visual Studio
+- Virtual Envs in VS
+- Exploring Visual Studio Directories  
+- Using the REPL in VS 
+- Shortcuts for VS 
+- Continued Learning 
 
+## 1. Installing Python
 
-## 1. Install Python
+[Windows](http://timmyreilly.azurewebsites.net/python-pip-virtualenv-installation-on-windows/)
 
-[Windows](http://timmyreilly.azurewebsites.net/python-flask-windows-development-environment-setup/)
-
-[Mac](http://docs.python-guide.org/en/latest/starting/install/osx/)
-
-## 2. use the REPL
+## 2. Using the REPL
 
 The REPL stands for Read Evaluate Print Loop
 
 Makes iterating and testing easy! 
 
-python
+Type python into your command prompt
 
-'>>>'
+```
+C:\..\> python
+Python 2.7...
+>>>
+```
 
 try these commands:
+```
+>>> x = 2 + 2
+>>> print x 
+>>> import this
+>>> type(x) 
+>>> dir(x) 
 
-x = 2 + 2
-
-print x 
-
-import this
+```
 
 [More Practice](http://timmyreilly.azurewebsites.net/python-introduction/)
 
-## 3. Run our first program
+## 3. Running our first program
 
 Use your favorite text editor. I'm using [Visual Studio Code](https://code.visualstudio.com/)
 
-beginnings.py
+I've named my example: [beginnings.py](https://github.com/timmyreilly/onehourpython/blob/windows/README.md)
 
 ```python 
 sentence = "Four score and seven years ago"
@@ -63,7 +73,31 @@ for letter in sentence:
 print sentence_no_vowels
 ```
 
-## 4. Install a package
+## 4. Examining the Python Folders 
+
+So because we're on windows let's take a look and explore our current folder structure just to get familiar with how Python works. 
+
+We'll also show some helpful ways of interacting with python in our terminal 
+- Calling Python Explicitly
+```
+> C:\Python27\python.exe 
+```
+- Calling Pip directly
+```
+> C:\Python27\Scripts\pip.exe list 
+```
+- Using Easy Install
+```
+> C:\Python27\Scripts\easy_install.exe 
+```
+- What Else is in there?
+``` 
+> dir C:\Python27\
+```
+
+## 5. Using Pip 
+
+Install a package
 	
 Python Packages are installed with pip
 
@@ -75,73 +109,94 @@ pip -v
 pip install requests
 ```
 
-## 5. Uninstall a package
+Uninstall a package
 
 ```
 pip uninstall requests
 
 ```
 
-## 6. Install virtualenv
+
+## 6. Creating, installing to, and using virtualenv and virtualenvwrapper-win 
+
+Back to my other blog: http://timmyreilly.azurewebsites.net/python-flask-windows-development-environment-setup/ 
+
+
+## 7. Examining the Envs folders! 
+
+Now that we've used our first virtual environment where is it? 
+Let's go find it! The files are in the computer! 
 
 ```
-pip install virtualenv
+> C:\Users\tireilly\Envs\helloworld\Scripts\pip.exe list 
+> C:\Users\tireilly\Envs\helloworld\Scripts\easy_install.exe 
 ```
 
-## 7. Install virtualenvwrapper or virtualenvwrapper-win
+## 8. setprojectdir and workflow  
 
-virtualenv wrappers make it easy to manage multiple environments and can make iterating on project easy. 
-
-[Windows](http://timmyreilly.azurewebsites.net/python-flask-windows-development-environment-setup/)
-
-[Mac](http://docs.python-guide.org/en/latest/dev/virtualenvs/)
-
-## 8. Create a virtual environment
-
-```
-mkvirtualenv helloworld
-```
+That was fun. Let's do it a lot. 
 
 cd into root of project
 
 ```
-setprojectdir .
+> workon newProject 
 
-deactivate
+> cd newProjectDirectory 
 
-workon helloworld
+> setprojectdir .
+
+> deactivate
+
+> workon helloworld
 ```
 
+Now that was all fun and agnostic. 
+Let's dive into Visual Studio. 
 
-## 9. Install flask and run our first app
+## 9. Visual Studio
 
-Now we need [flask](http://flask.pocoo.org/) for our first website!
+- Community Edition is Free and Awesome! 
+- And there's support for extensions like PTVS: http://microsoft.github.io/PTVS 
+- It’s a beast! 
+- Great for debugging, large projects and working with many different technologies. 
+The python offering is found in the form of Python Tools for Visual Studio. 
 
-```
-pip install flask
-```
+### The three things I want to introduce are Virtual Envs, the REPL, and Shortcuts 
 
-Create our hello.py
+## 10. Virtual Envs in VS 
+- Visual Studio will Manage Virtual Environments for you! 
 
-```python
-from flask import Flask
-app = Flask(__name__)
+[Full breakdown here](https://www.youtube.com/watch?v=eKPeC1remt4 )
 
-@app.route("/")
-def hello():
-    return "Hello World!"
 
-if __name__ == "__main__":
-    app.run()
-```
-
-SWEET!
+## 11. Exploring Visual Studio Directories 
 
 ```
-python hello.py
- * Running on http://localhost:5000/
+> C:\visualstudio\projects\OneHourPython\OneHourPython\env\Scripts\pip.exe
+> C:\visualstudio\projects\OneHourPython\OneHourPython\env\Scripts\python.exe 
+
 ```
-## 10. What's next?
+
+Check them out in the directory too! 
+
+## 12. Using the REPL in VS 
+
+[Full Breakdown here](https://www.youtube.com/watch?v=JNNAOypc6Ek&feature=iv&src_vid=TuewiStNT0M&annotation_id=annotation_3141657985)
+
+## 13. Shortcuts for VS 
+
+Make it [buttery](http://timmyreilly.azurewebsites.net/3-shortcuts-that-justify-opening-visual-studio/)
+
+- Ctrl+F5 = Run Without Debugging 
+- Ctrl+E, Ctrl+E = Selected text to interactive 
+- Alt+Shift+F5 = Send file to interactive
+
+
+That's it for now, but don't stop here the funs about to start! 
+
+# Continued Learning & Other Resources:
+Try Azure
+Take your ideas of the Ground: BizSpark
 
 Now that we've taken our first couple steps with Python, where should we do next? 
 
@@ -189,3 +244,7 @@ Now that we've taken our first couple steps with Python, where should we do next
 
 Please contact me if you have any questions: 
 [@timmyreilly](http://twitter.com/timmyreilly)
+
+
+
+
